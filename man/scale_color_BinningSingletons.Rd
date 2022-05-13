@@ -13,6 +13,15 @@ scale_colour_BinningSingletons(
   ...,
   na.value = "grey50"
 )
+
+scale_color_BinningSingletons(type, aesthetic = NULL, ..., na.value = "grey50")
+
+scale_colour_BinningSingletons(
+  type,
+  aesthetic = NULL,
+  ...,
+  na.value = "grey50"
+)
 }
 \arguments{
 \item{type}{Character string for type of data to color. Must be one of 'discrete' or 'continuous'}
@@ -25,14 +34,40 @@ scale_colour_BinningSingletons(
 }
 \description{
 Color ggplot figures with Binning Singleton colors
+
+Color ggplot figures with Binning Singleton colors
 }
 \examples{
 library(ggplot2)
 ggplot(mtcars, aes(x=mpg,y=wt)) +
     geom_point(aes(color=as.character(hp)), size=3) +
-    scale_color_BinningSingletons(type = "discrete", aesthetic = "color")
+    scale_color_BinningSingletons(type = "discrete", aesthetic = "colour")
+
+ggplot(mtcars,  aes(x=mpg,y=wt)) +
+    ggplot2::geom_point(ggplot2::aes(fill=as.character(cyl)), size=3, pch=21) +
+    scale_color_BinningSingletons(type = "discrete", aesthetic = "fill")
 
 ggplot(mtcars,  aes(x=mpg,y=wt)) +
     ggplot2::geom_point(ggplot2::aes(fill=cyl), size=3, pch=21) +
+    scale_color_BinningSingletons(type = "continuous", aesthetic = "fill")
+library(ggplot2)
+#Discrete color
+ggplot(mtcars, aes(x=mpg,y=wt)) +
+    geom_point(aes(color=as.character(cyl)), size=3) +
+    scale_color_BinningSingletons(type = "discrete", aesthetic = "color")
+
+#Discrete fill
+ggplot(mtcars,  aes(x=mpg,y=wt)) +
+    ggplot2::geom_point(ggplot2::aes(fill=as.character(hp)), size=3, pch=21) +
+    scale_color_BinningSingletons(type = "discrete", aesthetic = "fill")
+
+#Continuous color
+ggplot(mtcars,  aes(x=mpg,y=wt)) +
+    ggplot2::geom_point(ggplot2::aes(color=cyl), size=3) +
+    scale_color_BinningSingletons(type = "continuous", aesthetic = "color")
+
+#Continuous fill
+ggplot(mtcars,  aes(x=mpg,y=wt)) +
+    ggplot2::geom_point(ggplot2::aes(fill=hp), size=3, pch=21) +
     scale_color_BinningSingletons(type = "continuous", aesthetic = "fill")
 }
