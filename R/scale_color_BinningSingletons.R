@@ -1,4 +1,3 @@
-# color/colour, fill, etc
 #' Color ggplot figures with Binning Singleton colors
 #'
 #' @param type Character string for type of data to color. Must be one of 'discrete' or 'continuous'

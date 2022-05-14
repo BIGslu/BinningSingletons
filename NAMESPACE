@@ -2,3 +2,4 @@
 
 export(scale_color_BinningSingletons)
 export(scale_colour_BinningSingletons)
+export(theme_BinningSingletons)
