@@ -10,12 +10,12 @@
 #' library(ggplot2)
 #'
 #' ggplot(mtcars, aes(x=mpg,y=wt)) +
-#'     geom_point(aes(color=as.character(cyl)), size=3) +
-#'     scale_color_BinningSingletons(type = "discrete", aesthetic = "color") +
+#'     geom_point(aes(color=as.character(cyl)), size=3)  +
 #'     theme_BinningSingletons(logo_x = 0.5, logo_y = 0.1)
 #'
 #' ggplot(mtcars, aes(x=disp,y=drat)) +
 #'     geom_point(aes(color=as.character(cyl)), size=3) +
+#'     scale_color_BinningSingletons(type = "discrete", aesthetic = "color") +
 #'     theme_BinningSingletons()
 
 theme_BinningSingletons <- function(base_size = 11,
