@@ -11,14 +11,14 @@
 #' library(ggplot2)
 #' ggplot(mtcars, aes(x=mpg,y=wt)) +
 #'     geom_point(aes(color=as.character(hp)), size=3) +
-#'     scale_color_BinningSingletons(type = "discrete", aesthetic = "colour")
+#'     scale_color_BinningSingletons(type = "discrete", aesthetic = "color")
 #'
 #' ggplot(mtcars,  aes(x=mpg,y=wt)) +
 #'     ggplot2::geom_point(ggplot2::aes(fill=as.character(cyl)), size=3, pch=21) +
 #'     scale_color_BinningSingletons(type = "discrete", aesthetic = "fill")
 #'
 #' ggplot(mtcars,  aes(x=mpg,y=wt)) +
-#'     ggplot2::geom_point(ggplot2::aes(fill=cyl), size=3, pch=21) +
+#'     geom_point(aes(fill=cyl), size=3, pch=21) +
 #'     scale_color_BinningSingletons(type = "continuous", aesthetic = "fill")
 
 scale_color_BinningSingletons <- function(type, aesthetic=NULL,
